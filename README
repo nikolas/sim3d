@@ -1,0 +1,25 @@
+###############################
+#         3D SIMULATOR        #
+#          Will Brown         #
+#   Final Project, COMS4167   #
+###############################
+
+For my final project, I modified the simulator I made for Theme 3 Milestone 1 to
+work in three dimensions. The modifications I made are:
+
+* 3D gravitational, spring, simplegravity, lineardrag and vortex forces
+* 3D rendering provided by OpenGL
+* A interactive 3D camera controls
+  - Uses a "crystal ball" interface, where the camera is always looking at the
+    origin, and the user can move around the origin, as well as towards or away
+    from the origin.
+  - While running the simulator, use the arrow keys to rotate the camera around
+    the origin. Use - and = to move away from or towards the center.
+* 3D semi-implicit and symplectic integrators. Note that a linearized implicit
+  integrator is also provided, but does not work with spring forces, as the
+  spring force Hessian in 3D is not implemented.
+* Added an XML attribute to the scene parser which sets the camera's location in
+  spherical coordinates:
+    <camera r="[ ]" theta="[ ]" phi="[ ]" />
+* Created 14 sample scenes, provided in the assets/3d directory of this
+  submission.
