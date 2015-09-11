@@ -50,7 +50,8 @@ void TwoDSceneRenderer::renderScene() const
 
     GLfloat color[4] = {pathcolor.r, pathcolor.g, pathcolor.b, 1};
     glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
-    glMaterialfv(GL_FRONT, GL_SPECULAR, (GLfloat[]) {1., 1., 1.});
+    GLfloat arr[3] = {1., 1., 1.};
+    glMaterialfv(GL_FRONT, GL_SPECULAR, arr);
     glMateriali(GL_FRONT, GL_SHININESS, 128);
 
     glBegin(GL_LINE_STRIP);
@@ -65,7 +66,8 @@ void TwoDSceneRenderer::renderScene() const
   // Render edges
   GLfloat color[4] = {0.4, 0.4, 0.4, 1};
   glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
-  glMaterialfv(GL_FRONT, GL_SPECULAR, (GLfloat[]) {1., 1., 1.});
+  GLfloat arr[3] = {1., 1., 1.};
+  glMaterialfv(GL_FRONT, GL_SPECULAR, arr);
   glMateriali(GL_FRONT, GL_SHININESS, 128);
 
   const std::vector<std::pair<int,int> >& edges = m_scene.getEdges();
@@ -93,8 +95,9 @@ void TwoDSceneRenderer::renderScene() const
         m_particle_colors[i].r, m_particle_colors[i].g,
         m_particle_colors[i].b, 1};
 
+    GLfloat arr[3] = {1., 1., 1.};
     glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
-    glMaterialfv(GL_FRONT, GL_SPECULAR, (GLfloat[]) {1., 1., 1.});
+    glMaterialfv(GL_FRONT, GL_SPECULAR, arr);
     glMateriali(GL_FRONT, GL_SHININESS, 128);
 
     renderSolidCircle( x.segment<3>(3*i), radii[i] );

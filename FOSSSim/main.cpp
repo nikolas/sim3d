@@ -219,10 +219,14 @@ void initializeOpenGLandGLUT( int argc, char** argv )
   glEnable(GL_LIGHTING);
   // Initialize light 0
   glEnable(GL_LIGHT0);
-  glLightfv(GL_LIGHT0, GL_AMBIENT, (GLfloat[]) {.2, .2, .2});
-  glLightfv(GL_LIGHT0, GL_DIFFUSE, (GLfloat[]) {1., 1., 1.});
-  glLightfv(GL_LIGHT0, GL_SPECULAR, (GLfloat[]) {1, 1, 1});
-  glLightfv(GL_LIGHT0, GL_POSITION, (GLfloat[]) {10., 10., 10.});
+  GLfloat arr1[3] = {.2, .2, .2};
+  GLfloat arr2[3] = {1., 1., 1.};
+  GLfloat arr3[3] = {1, 1, 1};
+  GLfloat arr4[3] = {10., 10., 10.};
+  glLightfv(GL_LIGHT0, GL_AMBIENT, arr1);
+  glLightfv(GL_LIGHT0, GL_DIFFUSE, arr2);
+  glLightfv(GL_LIGHT0, GL_SPECULAR, arr3);
+  glLightfv(GL_LIGHT0, GL_POSITION, arr4);
 
   
   // Initialize OpenGL
